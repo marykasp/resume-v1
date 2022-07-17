@@ -38,6 +38,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  position: relative;
 }
 
 a {
@@ -55,6 +56,37 @@ a {
   display: grid;
   grid-template-columns: 1fr 2fr;
   box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
+  position: absolute;
+  top: 60px;
+  left: 300px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--highlight-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn i {
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: var(--highlight-color-alt);
+}
+
+.back-btn:hover i {
+  transform: rotate(90deg);
 }
 
 /* LEFT CONTAINER */
