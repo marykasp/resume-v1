@@ -170,8 +170,8 @@ a {
   position: relative;
   list-style: none;
   margin: 10px 0;
-  cursor: pointer;
 }
+
 
 .contact-info ul li .icon {
   display: inline-block;
@@ -185,6 +185,18 @@ a {
   font-weight: 300;
 }
 
+#professional-skills ul li {
+  list-style: square;
+  color: #fff;
+}
+
+#professional-skills ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#professional-skills ul div:first-child {
+  margin-right: 10px;
+}
 /* =============== EDUCATION =============== */
 .contact-info.education li {
   margin-bottom: 15px;
