@@ -14,7 +14,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <a href="../index.html">
@@ -22,14 +22,17 @@
         <i class="fa-solid fa-arrow-left"></i>
       </button>
     </a>
-    <section class="container" id="resume">
+    <section class="container resume" id="area-cv">
       <div class="left-side">
         <!-- PROFILE IMAGE -->
         <div class="profile-text">
           <div class="profile">
             <img src="img/profile.jpg" alt="mary kasparian" />
           </div>
-          <h2>Mary Kasparian<br /><span>Web Developer</span></h2>
+          <h1>Mary Kasparian<br /><span>Frontend Web Developer</span></h1>
+          <div>
+            <a download="" href="assets/pdf/marykaspariancv.pdf" class="home-button-movil">Download</a>
+          </div>
         </div>
         <!-- CONTACT -->
         <div class="contact-info">
@@ -68,6 +71,7 @@
               <span class="text">Chicago, Illinois</span>
             </li>
           </ul>
+          <i class="fa-solid fa-download generate-pdf" title="Generate PDF" id="resume-button"></i>
         </div>
 
         <!-- EDUCATION -->
@@ -92,27 +96,71 @@
           </ul>
         </div>
 
+        <div class="contact-info" id="professional-skills">
+          <h3 class="title">Professional Skills</h3>
+          <ul>
+            <div>
+              <li>
+                <span class="text">Detail Oriented</span>
+              </li>
+              <li>
+                <span class="text">Team Work</span>
+              </li>
+              <li>
+                <span class="text">Time Management</span>
+              </li>
+            </div>
+            <div>
+              <li>
+                <span class="text">Problem Solver</span>
+              </li>
+              <li>
+                <span class="text">Organizational skills</span>
+              </li>
+              <li>
+                <span class="text">Adaptability</span>
+              </li>
+            </div>
+          </ul>
+        </div>
+
         <div class="contact-info language">
-          <h3 class="title">Languages</h3>
+          <h3 class="title">Developer Skills</h3>
           <ul>
             <li>
-              <span class="text">Python</span>
+              <span class="text">HTML/CSS</span>
+              <span class="percent">
+                <div style="width: 95%"></div>
+              </span>
+            </li>
+            <li>
+              <span class="text">JavaScript</span>
+              <span class="percent">
+                <div style="width: 80%"></div>
+              </span>
+            </li>
+            <li>
+              <span class="text">React</span>
               <span class="percent">
                 <div style="width: 70%"></div>
               </span>
             </li>
-            <li>
+            <!-- <li>
               <span class="text">Ruby</span>
               <span class="percent">
-                <div style="width: 50%"></div>
+                <div style="width: 70%"></div>
               </span>
-            </li>
-            <li>
-              <span class="text">JavaScipt</span>
-              <span class="percent">
-                <div style="width: 60%"></div>
-              </span>
-            </li>
+            </li> -->
+          </ul>
+        </div>
+
+        <div class="contact-info interests">
+          <h2 class="title">Interests</h2>
+          <ul>
+            <li><i class="fa fa-gamepad" aria-hidden="true"></i> Gaming</li>
+            <li><i class="fa fa-book" aria-hidden="true"></i> Reading</li>
+            <li><i class="fa fa-pencil" aria-hidden="true"></i> Journaling</li>
+            <li><i class="fa fa-cutlery" aria-hidden="true"></i> Cooking</li>
           </ul>
         </div>
       </div>
@@ -129,8 +177,9 @@
             necessary for adapting quickly to new ever-changing environments.
           </p>
         </div>
-
-        <div class="about">
+        <!-- button to download cv saved in pdf folder -->
+        
+        <div class="about experience">
           <h2 class="title2">Experience</h2>
 
           <div class="box">
@@ -181,8 +230,27 @@
           </div>
         </div>
 
+        <!-- qualifications -->
+        <div class="about qualifications">
+          <h2 class="title2">Qualifications</h2>
+          <ul>
+            <li>
+              Able to code web pages from the ground up using HTML, CSS, Javascript, and React. ALong with working proficiency of the Git version control, Wordpress control management, command line (Mac & Linux), and FTP procedures.
+            </li>
+            <li>
+              Fundamental understanding of mobile first design concepts, cross browser development, API implementation and search engine optimization
+            </li>
+            <li>
+              10+ years of science research experience granted me the ability to easily communicate with fellow collaborators and developers to establish the necessary requirements to meet milestones and complete projects in a professional and timely manner.
+            </li>
+            <li>
+              Designed and coded websites from start to finish using current technologies and design trends while optimizing content for mobile and cross browser performance
+            </li>
+          </ul>
+        </div>
+
         <div class="about skills">
-          <h2 class="title2">Professional Skills</h2>
+          <h2 class="title2">Technical Skills</h2>
           <div class="box">
             <h4>Html</h4>
             <div class="percent">
@@ -202,9 +270,15 @@
             </div>
           </div>
           <div class="box">
-            <h4>Ruby/Python</h4>
+            <h4>Ruby</h4>
             <div class="percent">
               <div style="width: 45%"></div>
+            </div>
+          </div>
+          <div class="box">
+            <h4>ReactJS</h4>
+            <div class="percent">
+              <div style="width: 55%"></div>
             </div>
           </div>
           <div class="box">
@@ -215,18 +289,15 @@
           </div>
         </div>
 
-        <div class="about interests">
-          <h2 class="title2">Interests</h2>
-          <ul>
-            <li><i class="fa fa-gamepad" aria-hidden="true"></i> Gaming</li>
-            <li><i class="fa fa-book" aria-hidden="true"></i> Reading</li>
-            <li><i class="fa fa-pencil" aria-hidden="true"></i> Journaling</li>
-            <li><i class="fa fa-cutlery" aria-hidden="true"></i> Cooking</li>
-          </ul>
-        </div>
+       
         <!-- right container -->
       </div>
       <!-- container -->
     </section>
+
+    <!--===========  HTML2PDF =========== -->
+    <script src="assets/js/html2pdf.bundle.min.js"></script>
+    <!--===========   Main JS =========== -->
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

@@ -1,14 +1,6 @@
 /* ===== GOOGLE FONTS ===== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-/* --title-color: #003147;
-  --text-color: #fff;
-  --text-color-dark: #333;
-  --highlight-color: #03a9fa;
-  --highlight-color-alt: #2a7da2;
-  --text-color-light: #;
-  --container-color: #fff;
-  --container-color-alt: #003147;
-  --body-color: lightblue; */
+
 
 /* ===== VARIABLES CSS ===== */
 :root {
@@ -22,9 +14,109 @@
   --container-color: #fff;
   --container-color-alt: #3e4067;
   --background: #f7f7f7;
+
+  /* font sizes */
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --h4-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+
 }
 
-/* Base Styles */
+/* Font size variables to scale CV */
+body.scale-cv {
+  --h1-font-size: 0.938rem;
+  --h2-font-size: 0.938rem;
+  --h3-font-size: 0.875rem;
+  --h4-font-size: 0.875rem;
+  --normal-font-size: 0.813rem;
+  --small-font-size: 0.75rem;
+  --smaller-font-size: 0.688rem;
+}
+
+/* classes modified to reduce size and print on A4 sheet */
+.scale-cv .generate-pdf, 
+.scale-cv .back-btn {
+  display: none;
+}
+
+.scale-cv .container {
+  max-width: 760px;
+  padding: 0;
+  margin: 0;
+}
+
+.scale-cv .interests {
+  display: none;
+}
+
+.scale-cv .skills {
+  display: none;
+}
+
+.scale-cv .container .left-side {
+  padding: 0.5rem 1.3rem;
+  margin: 0;
+}
+
+.scale-cv .container .right-side {
+  padding: 2rem 2rem 0 1rem;
+  margin: 0;
+}
+
+.scale-cv .right-side .about {
+  margin-bottom: 1.8rem;
+}
+
+.scale-cv .contact-info {
+  padding: 0.5rem 0;
+}
+
+.scale-cv .contact-info .title {
+  margin: 0;
+}
+
+.scale-cv .profile-text .profile {
+  width: 90px;
+  height: 90px;
+}
+
+.scale-cv #professional-skills ul {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.scale-cv #professional-skills ul li {
+  list-style: none;
+}
+
+.scale-cv .experience .box {
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.scale-cv .experience .box .text {
+  margin-top: 1rem;
+}
+
+.scale-cv .qualifications ul li {
+  margin-top: 0.4rem;
+}
+
+.scale-cv .skills .box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.scale-cv .interests ul {
+  grid-template-columns: repeat(2, auto);
+}
+
+/* =============== Base Styles =============== */
 * {
   margin: 0;
   padding: 0;
@@ -39,12 +131,29 @@ body {
   align-items: center;
   min-height: 100vh;
   position: relative;
+  font-size: 16px;
 }
 
 a {
   text-decoration: none;
   color: var(--highlight-color);
 }
+
+
+
+h5 {
+  font-size: var(--h4-font-size);
+}
+
+p, li {
+  color: #333;
+  font-size: var(--normal-font-size)
+}
+
+.hide {
+  display: none;
+}
+
 
 .container {
   position: relative;
@@ -61,11 +170,11 @@ a {
 .back-btn {
   position: absolute;
   top: 60px;
-  left: 300px;
+  right: 300px;
   padding: 5px 10px;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   border: none;
   display: flex;
   align-items: center;
@@ -73,11 +182,12 @@ a {
   background-color: var(--highlight-color);
   cursor: pointer;
   transition: background-color 0.3s ease;
+  z-index: 2;
 }
 
 .back-btn i {
   color: #fff;
-  font-size: 20px;
+  font-size: var(--normal-font-size);
   transition: all 0.3s ease;
 }
 
@@ -89,14 +199,47 @@ a {
   transform: rotate(90deg);
 }
 
-/* LEFT CONTAINER */
+/* =============== LEFT CONTAINER ===============*/
 .container .left-side {
   position: relative;
   background: var(--container-color-alt);
   padding: 40px;
 }
 
-/* PROFILE INFORMATION */
+/* =============== Generate PDF Button =============== */
+.generate-pdf {
+  position: absolute;
+  top: 1rem;
+  left: 1rem; 
+  font-size: 1.5rem;
+  color: var(--highlight-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generate-pdf:hover {
+  color: var(--text-color);
+}
+
+/* download button for mobile - download cv in assets */
+.home-button-movil {
+  display: none;
+  border: 2px solid var(--text-color);
+  border-radius: 3px;
+  background-color: var(--title-color);
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.home-button-movil:hover {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+/* =============== PROFILE INFORMATION =============== */
 .profile-text {
   position: relative;
   display: flex;
@@ -123,9 +266,9 @@ a {
   object-fit: cover;
 }
 
-.profile-text h2 {
+.profile-text h1 {
   color: var(--text-color);
-  font-size: 1.5em;
+  font-size: var(--h1-font-size);
   margin-top: 20px;
   text-transform: uppercase;
   text-align: center;
@@ -133,12 +276,12 @@ a {
   line-height: 1.4em;
 }
 
-.profile-text h2 span {
-  font-size: 0.8em;
+.profile-text h1 span {
+  font-size: var(--normal-font-size);
   font-weight: 300;
 }
 
-/*  CONTACT INFORMATION */
+/* =============== CONTACT INFORMATION =============== */
 .contact-info {
   padding-top: 40px;
 }
@@ -147,6 +290,7 @@ a {
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: var(--h3-font-size);
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
@@ -159,22 +303,43 @@ a {
   position: relative;
   list-style: none;
   margin: 10px 0;
-  cursor: pointer;
 }
+
 
 .contact-info ul li .icon {
   display: inline-block;
   width: 25px;
-  font-size: 18px;
+  font-size: var(--normal-font-size);
   color: var(--highlight-color);
 }
 
 .contact-info ul li span {
   color: #fff;
   font-weight: 300;
+  font-size: var(--small-font-size);
 }
 
-/* EDUCATION */
+#professional-skills ul li {
+  list-style: circle;
+  color: #fff;
+  margin: 5px auto;
+}
+
+#professional-skills ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#professional-skills ul div:first-child {
+  margin-right: 1.7rem;
+}
+
+#professional-skills span.text {
+  font-size: var(--smaller-font-size);
+}
+
+
+/* =============== EDUCATION =============== */
 .contact-info.education li {
   margin-bottom: 15px;
 }
@@ -187,6 +352,7 @@ a {
 .contact-info h4 {
   color: #fff;
   font-weight: 300;
+  font-size: var(--normal-font-size)
 }
 
 .contact-info h4:nth-child(2) {
@@ -210,7 +376,7 @@ a {
   background: var(--highlight-color);
 }
 
-/* Right Container */
+/* =============== Right Container =============== */
 .container .right-side {
   position: relative;
   background: var(--container-color);
@@ -230,35 +396,53 @@ a {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  font-size: var(--h2-font-size)
 }
 
-p {
-  color: #333;
-}
 
-.about .box {
+.experience .box {
   display: flex;
   flex-direction: row;
   margin: 20px 0;
 }
 
-.about .box .year-company {
+.experience .box .year-company {
   min-width: 150px;
   margin-right: 1rem;
 }
 
-.about .box .year-company h5 {
+.experience .box .year-company h5 {
   text-transform: uppercase;
   color: #848c90;
   font-weight: 500;
+  font-size: var(--small-font-size);
 }
 
-.about .box .text h4 {
+.experience .box .text h4 {
   text-transform: uppercase;
   color: var(--highlight-color-alt);
-  font-size: 16px;
+  font-size: var(--h4-font-size);
 }
 
+.qualifications ul {
+  list-style: none; 
+  padding-left: 1rem;
+}
+
+.qualifications ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--title-color); /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1.2em; /* Also needed for space (tweak if needed) */
+}
+
+.qualifications ul li {
+  margin-top: 1rem;
+}
+
+/* =============== Professional Skills =============== */
 .skills .box {
   position: relative;
   width: 100%;
@@ -266,12 +450,14 @@ p {
   grid-template-columns: 150px 1fr;
   justify-content: center;
   align-items: center;
+  margin-top: 1.1rem;
 }
 
 .skills .box h4 {
   text-transform: uppercase;
   color: #848c99;
   font-weight: 500;
+  font-size: var(--h4-font-size)
 }
 
 .skills .box .percent {
@@ -291,22 +477,25 @@ p {
 
 .interests ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .interests ul li {
   list-style: none;
-  color: var(--text-color-dark);
+  color: var(--text-color);
   font-weight: 300;
   margin: 10px 0;
 }
 
 .interests ul li .fa {
   color: var(--highlight-color);
-  font-size: 18px;
+  font-size: var(--h4-font-size);
   width: 20px;
+  margin-right: 0.2rem;
 }
 
+
+/* =============== Response Design =============== */
 @media (max-width: 1000px) {
   .container {
     margin: 10px;
@@ -316,11 +505,29 @@ p {
   .interests ul {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .home-button-movil {
+    display: inline-block;
+  }
+
+  .generate-pdf {
+    display: none;
+  }
+
+  .back-btn {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+  }
 }
 
 @media (max-width: 600px) {
   .about .box {
     flex-direction: column;
+  }
+
+  #professional-skills ul li {
+    list-style: none;
   }
 
   .about .box .year-company {
@@ -334,4 +541,7 @@ p {
   .skills .box {
     grid-template-columns: repeat(1, 1fr);
   }
+
+
+
 }
