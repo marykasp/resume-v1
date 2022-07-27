@@ -44,7 +44,39 @@ body.scale-cv {
 }
 
 .scale-cv .container {
-  max-width: 700px;
+  max-width: 760px;
+  padding: 0;
+  margin: 0;
+}
+
+.scale-cv .interests {
+  display: none;
+}
+
+.scale-cv .skills {
+  display: none;
+}
+
+.scale-cv .container .left-side {
+  padding: 0.5rem 1.3rem;
+  margin: 0;
+}
+
+.scale-cv .container .right-side {
+  padding: 2rem 2rem 0 1rem;
+  margin: 0;
+}
+
+.scale-cv .right-side .about {
+  margin-bottom: 1.8rem;
+}
+
+.scale-cv .contact-info {
+  padding: 0.5rem 0;
+}
+
+.scale-cv .contact-info .title {
+  margin: 0;
 }
 
 .scale-cv .profile-text .profile {
@@ -63,10 +95,15 @@ body.scale-cv {
 
 .scale-cv .experience .box {
   flex-direction: column;
+  margin: 5px 0;
 }
 
 .scale-cv .experience .box .text {
   margin-top: 1rem;
+}
+
+.scale-cv .qualifications ul li {
+  margin-top: 0.4rem;
 }
 
 .scale-cv .skills .box {
@@ -111,6 +148,10 @@ h5 {
 p, li {
   color: #333;
   font-size: var(--normal-font-size)
+}
+
+.hide {
+  display: none;
 }
 
 
@@ -355,6 +396,7 @@ p, li {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  font-size: var(--h2-font-size)
 }
 
 
@@ -384,6 +426,7 @@ p, li {
 
 .qualifications ul {
   list-style: none; 
+  padding-left: 1rem;
 }
 
 .qualifications ul li::before {
