@@ -38,6 +38,10 @@ a {
   color: var(--highlight-color);
 }
 
+h5 {
+  font-size: 15px;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -93,7 +97,6 @@ a {
 
 /* =============== Generate PDF Button =============== */
 .generate-pdf {
-  /* display: none; */
   position: absolute;
   top: 1rem;
   left: 1rem; 
@@ -104,6 +107,24 @@ a {
 }
 
 .generate-pdf:hover {
+  color: var(--text-color);
+}
+
+/* download button for mobile - download cv in assets */
+.home-button-movil {
+  display: none;
+  border: 2px solid var(--text-color);
+  border-radius: 3px;
+  background-color: var(--title-color);
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.home-button-movil:hover {
+  background-color: var(--highlight-color);
   color: var(--text-color);
 }
 
@@ -342,11 +363,29 @@ p {
   .interests ul {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .home-button-movil {
+    display: inline-block;
+  }
+
+  .generate-pdf {
+    display: none;
+  }
+
+  .back-btn {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+  }
 }
 
 @media (max-width: 600px) {
   .about .box {
     flex-direction: column;
+  }
+
+  #professional-skills ul li {
+    list-style: none;
   }
 
   .about .box .year-company {
@@ -361,9 +400,6 @@ p {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .back-btn {
-    position: absolute;
-    top: 1.2rem;
-    right: 2rem;
-  }
+
+
 }
